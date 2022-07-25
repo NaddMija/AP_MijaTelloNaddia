@@ -1,0 +1,25 @@
+<div class="container" *ngIf="proye">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()"novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombrePro">Nombre del Proyecto</label>
+                    <input type="text" class="form-control" id="nombrePro" name="nombrePro"[(ngModel)]= "proye.nombrePro" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionPro">Descripcion del Proyecto</label>
+                    <input type="text" class="form-control" id="descripcionPro" name="descripcionPro"[(ngModel)]= "proye.descripcionPro" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaPro">Fecha </label>
+                    <input type="number" class="form-control" id="fechaPro" name="fechaPro"[(ngModel)]= "proye.fechaPro" required>
+                </div>
+
+                <button class="btn btn-primary">
+                    Actualizar Proyectos
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
