@@ -6,23 +6,23 @@
         </button>
     </div>
   <div class="col lg 1"></div>
-    <div class="col-lg-11">
+    <div class="col-lg-11 col-md-11 col-sm-11">
         <table class="table">
             <tbody>
                 <tr *ngFor="let Proyectos of pro">
                     <td>
-                        <h2>{{Proyectos.nombrePro}}</h2>
+                        <h4>{{Proyectos.nombrePro}}</h4>
                     </td>
                     <td>{{Proyectos.descripcionPro}}</td>
                     <td>{{Proyectos.fechaPro}}</td>
                     
                     <td *ngIf="isLogged">
                         <button class="btn btn-light" routerLink="/editpro/{{Proyectos.id}}">
-                            <i class="bi bi-pencil-fill"></i> EDITAR</button>
+                            <i class="bi bi-pencil-fill"></i> Editar</button>
                     </td>
                     <td *ngIf="isLogged">
                         <button class="btn btn-danger" (click)="delete (Proyectos.id)">
-                            <i class="bi bi-trash-fill"></i> BORRAR</button>
+                            <i class="bi bi-trash-fill"></i> Borrar</button>
                     </td>
                 </tr>
             </tbody>
