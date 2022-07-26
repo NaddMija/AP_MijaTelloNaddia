@@ -1,0 +1,90 @@
+
+<div class="row">
+    <h1>Skills</h1>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaskill" *ngIf="isLogged">
+            Agregar 'Skill'
+        </button>
+    </div>
+</div>
+
+<div class="row" *ngFor="let Skills of skill">   
+    <div class="progress"   style="height: 30px;" >
+        <div class="progress-bar bg-warning" style="width:{{Skills.porcentajeS}}%" role="progressbar" > <h4>{{Skills.nombreS}} - {{Skills.porcentajeS}}%</h4></div>
+      </div>
+      <br>
+      <br>
+      <td *ngIf="isLogged">
+        <button class="btn btn-light" routerLink="/editskill/{{Skills.id}}">
+            <i class="bi bi-pencil-fill"></i> Editar</button>
+    </td>
+    <br>
+    <br>
+    <td *ngIf="isLogged">
+        <button class="btn btn-danger" (click)="delete(Skills.id)">
+            <i class="bi bi-trash-fill"></i> Borrar</button>
+    </td>  
+</div>
+
+
+<div class="row" >
+    <h1>Hard & Soft skills</h1>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let Skills of skill">{{Skills.nombreS}}
+        <circle-progress
+            
+            [percent]="50"
+            [radius]="90"        
+            [showImage]="true"
+            [imageHeight]="70"
+            [imageWidth]="70"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="2"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="600"
+            
+        ></circle-progress>
+    </div>
+    
+</div>
+
+
+
+
+<!-- <div class="row" *ngFor="let Skills of skill">
+    <h1>Skills</h1>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <h2>{{Skills.porcentajeS}}</h2>
+        <circle-progress [percent]="20" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+    <div class="text-center col-sm-4 col-md-4 col-lg-4">
+        <circle-progress [percent]="85" [radius]="100" [outerStrokeWidth]="2" [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true" [animationDuration]="100">
+        </circle-progress>
+    </div>
+</div> -->
