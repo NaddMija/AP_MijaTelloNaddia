@@ -1,55 +1,40 @@
 
-<div class="row">
-    <h1>Skills</h1>
-    <div class="col-lg-2">
-        <button type="button" class="btn btn-dark" routerLink="/nuevaskill" *ngIf="isLogged">
-            Agregar 'Skill'
-        </button>
+<div class="container-fluid">
+    <div class="row">
+        <h6 class="text-center">Hard & Soft</h6>
+        <h2 class="text-center fw-bold text-uppercase mb-4">Skills</h2>
+
+
+        <div class="col-12 text-center">
+            <button type="button" class="btn btn-dark add-button" routerLink="/nuevaskill" *ngIf="isLogged"><i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
     </div>
-</div>
 
-<div class="row" *ngFor="let Skills of skill">   
-    <div class="progress"   style="height: 30px;" >
-        <div class="progress-bar bg-warning" style="width:{{Skills.porcentajeS}}%" role="progressbar" > <h4>{{Skills.nombreS}} - {{Skills.porcentajeS}}%</h4></div>
-      </div>
-      <br>
-      <br>
-      <td *ngIf="isLogged">
-        <button class="btn btn-light" routerLink="/editskill/{{Skills.id}}">
-            <i class="bi bi-pencil-fill"></i> Editar</button>
-    </td>
-    <br>
-    <br>
-    <td *ngIf="isLogged">
-        <button class="btn btn-danger" (click)="delete(Skills.id)">
-            <i class="bi bi-trash-fill"></i> Borrar</button>
-    </td>  
-</div>
-
-
-<div class="row" >
-    <h1>Hard & Soft skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4" *ngFor="let Skills of skill">{{Skills.nombreS}}
-        <circle-progress
-            
-            [percent]="50"
-            [radius]="90"        
-            [showImage]="true"
-            [imageHeight]="70"
-            [imageWidth]="70"
-            [showUnits]="false"
-            [showSubtitle]="false"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="2"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="600"
-            
-        ></circle-progress>
+    <div class="row" >  
+        <div class="col-lg-10 offset-lg-1" *ngFor="let Skills of skill">
+            <div class="container">            
+                    <div class="row d-flex align-items-end">
+                        <div class="col-12 col-md-10 name-skill">
+                            <h5 class="fw-bold">{{Skills.nombreS}}</h5>
+                            <div class="progress">                                
+                                <div class="progress-bar" style="width:{{Skills.porcentajeS}}%" role="progressbar">
+                                    <h5>{{Skills.porcentajeS}}%</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-2 buttons-col text-end mt-2 mt-md-auto" *ngIf="isLogged">
+                            <button class="btn btn-light edit-button m-1" routerLink="/editskill/{{Skills.id}}">
+                                <i class="bi bi-pencil-fill"></i>
+                            </button>
+                            <button class="btn btn-danger delete-button m-1" (click)="delete(Skills.id)">
+                                <i class="bi bi-trash-fill"></i>
+                            </button>
+                        </div> 
+                    </div>
+            </div>
+        </div>
     </div>
-    
-</div>
 
 
 

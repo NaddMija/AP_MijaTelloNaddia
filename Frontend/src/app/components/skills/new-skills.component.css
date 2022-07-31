@@ -1,0 +1,18 @@
+.container {
+    padding-top: 3rem;
+}
+
+label{
+    font-family: 'Source Code Pro', monospace;
+}
+
+h1{
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: #2E6C83;
+}
+
+button, a, h1{
+    font-family: 'Albert Sans', sans-serif;
+
+}

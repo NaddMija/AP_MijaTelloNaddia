@@ -1,22 +1,19 @@
 <div class="container">
     <div class="row">
         <div>
+            <h1>Agregar 'Skill'</h1>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreS">Nombre</label>
-                    <input type="text" class="form-control" id="nombreS" name="nombreS" [(ngModel)]="nombreS" required>
+                    <label for="nombreS" class="mb-2">Nombre</label>
+                    <input type="text" class="form-control mb-2" id="nombreS" name="nombreS" [(ngModel)]="nombreS" required>
                 </div>
                 <div class="form-group">
-                    <label for="porcentajeS">Porcentaje</label>
-                    <input type="text" class="form-control" id="porcentajeS" name="porcentajeS" [(ngModel)]="porcentajeS" required>
-                </div>
-                <div class="form-group">
-                    <label for="imagenS">Imagen </label>
-                    <input type="text" class="form-control" id="imagenS" name="imagenS" [(ngModel)]="imagenS" required>
-                </div>
-                <button class="btn btn-primary">Agregar Habilidad</button>
+                    <label for="porcentajeS" class="mb-2">Porcentaje</label>
+                    <input type="text" class="form-control mb-2" id="porcentajeS" name="porcentajeS" [(ngModel)]="porcentajeS" required>
+                </div>             
+                <button class="btn btn-primary mb-2">Agregar 'Skill'</button>
             </form>
-            <a href="http://localhost:4200/ "class="btn btn-primary">Cancelar</a>
+            <a href="https://front-mijatello.web.app/" class="btn btn-secondary">Cancelar</a>
         </div>
 
     </div>
